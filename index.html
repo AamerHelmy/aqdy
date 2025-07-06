@@ -400,10 +400,7 @@
                                     هذا العقد.</p>
 
                                 <h5 class="font-bold mt-4">البند الثاني: وصف وحالة الثلاجة</h5>
-                                <p>يُقر الطرف الثاني بأنه عاين الثلاجة المعاينة التامة النافية للجهالة، ويقر بأنها تُسلم
-                                    وهي
-                                    بحالة <span id="preview-fridge-condition" data-placeholder="[الحالة]"></span> وصالحة
-                                    للاستعمال وتفي بالغرض الذي استلمها من أجله.</p>
+                                <p id="preview-clause-2"></p>
                                 <div id="image-container-preview" class="mt-4">
                                     <h6 class="font-bold">صورة الثلاجة وقت التسليم:</h6>
                                     <img id="preview-fridge-image" src="#" alt="صورة الثلاجة" />
@@ -453,7 +450,8 @@
                                         data-placeholder="[مدة الإخطار بالفسخ]"></span> لتصحيح المخالفة. فإن لم يقم
                                     بذلك، يعتبر العقد مفسوخاً.</p>
 
-                                <h5 class="font-bold mt-4 break-before-page" id="clause-9-title">البند التاسع: حل النزاعات</h5>
+                                <h5 class="font-bold mt-4 break-before-page" id="clause-9-title">البند التاسع: حل
+                                    النزاعات</h5>
                                 <p>في حال وجود أي نزاع حول هذا العقد، يتم تسويته أولاً بالطرق الودية. وإذا تعذر ذلك، يتم
                                     اللجوء إلى المحاكم المختصة في <span id="preview-dispute-location"
                                         data-placeholder="[مكان المحاكم]"></span> للفصل في النزاع.</p>
@@ -567,7 +565,6 @@
                 'fridge-width': ['preview-fridge-width'],
                 'fridge-color': ['preview-fridge-color'],
                 'fridge-general-desc': ['preview-fridge-general-desc'],
-                'fridge-condition': ['preview-fridge-condition'],
                 'contract-duration': ['preview-contract-duration'],
                 'notice-period': ['preview-notice-period'],
                 'termination-notice': ['preview-termination-notice'],
@@ -623,6 +620,26 @@
                 }
             }
 
+            function updateClause2() {
+                const conditionValue = document.getElementById('fridge-condition').value;
+                const clauseElement = document.getElementById('preview-clause-2');
+                if (!clauseElement) return;
+
+                const conditionSpan = document.createElement('span');
+                conditionSpan.dataset.placeholder = '[الحالة]';
+                applyPlaceholderStyle(conditionSpan, conditionValue);
+
+                let text;
+                if (conditionValue === 'جديدة') {
+                    text = `يُقر الطرف الثاني بأنه عاين الثلاجة المعاينة التامة النافية للجهالة، ويقر بأنها تُسلم وهي بحالة ${conditionSpan.outerHTML} وغير مستعملة سابقاً، وصالحة للاستعمال وتفي بالغرض الذي استلمها من أجله.`;
+                } else if (conditionValue === 'مستعملة') {
+                    text = `يُقر الطرف الثاني بأنه عاين الثلاجة المعاينة التامة النافية للجهالة، ويقر بأنها ${conditionSpan.outerHTML} بحالة جيدة ، وأنها صالحة للاستعمال وتفي بالغرض الذي استلمها من أجله.`;
+                } else {
+                    text = `يُقر الطرف الثاني بأنه عاين الثلاجة المعاينة التامة النافية للجهالة، ويقر بأنها تُسلم وهي بحالة ${conditionSpan.outerHTML} وصالحة للاستعمال وتفي بالغرض الذي استلمها من أجله.`;
+                }
+                clauseElement.innerHTML = text;
+            }
+
             function navigate(step) {
                 currentStep = step;
                 document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
@@ -653,8 +670,10 @@
 
             document.getElementById('delivery-location').addEventListener('input', updateDeliveryClause);
             document.getElementById('party2-cr').addEventListener('input', updateDeliveryClause);
+            document.getElementById('fridge-condition').addEventListener('change', updateClause2);
 
             updateDeliveryClause();
+            updateClause2();
 
             fridgeImageInput.addEventListener('change', function (event) {
                 const file = event.target.files[0];
