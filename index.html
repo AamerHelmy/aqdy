@@ -153,6 +153,12 @@
                 max-height: 160px;
                 /* <-- يمكنك تعديل هذا الرقم للتحكم في حجم الصورة عند الطباعة */
             }
+
+            .break-before-page {
+                break-before: page;
+                page-break-before: always;
+                /* دعم أوسع */
+            }
         }
     </style>
 </head>
@@ -447,7 +453,7 @@
                                         data-placeholder="[مدة الإخطار بالفسخ]"></span> لتصحيح المخالفة. فإن لم يقم
                                     بذلك، يعتبر العقد مفسوخاً.</p>
 
-                                <h5 class="font-bold mt-4">البند التاسع: حل النزاعات</h5>
+                                <h5 class="font-bold mt-4 break-before-page" id="clause-9-title">البند التاسع: حل النزاعات</h5>
                                 <p>في حال وجود أي نزاع حول هذا العقد، يتم تسويته أولاً بالطرق الودية. وإذا تعذر ذلك، يتم
                                     اللجوء إلى المحاكم المختصة في <span id="preview-dispute-location"
                                         data-placeholder="[مكان المحاكم]"></span> للفصل في النزاع.</p>
