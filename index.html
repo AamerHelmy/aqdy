@@ -66,12 +66,17 @@
             justify-content: center;
         }
 
-        #fridge-image-preview-container, #image-container-preview {
-            display: none; /* Hide image containers by default */
+        #fridge-image-preview-container,
+        #image-container-preview {
+            display: none;
+            /* Hide image containers by default */
         }
-        #fridge-image-preview, #preview-fridge-image {
+
+        #fridge-image-preview,
+        #preview-fridge-image {
             max-width: 100%;
-            max-height: 200px; /* <-- يمكنك تعديل هذا الرقم للتحكم في حجم الصورة المعروضة على الشاشة */
+            max-height: 200px;
+            /* <-- يمكنك تعديل هذا الرقم للتحكم في حجم الصورة المعروضة على الشاشة */
             border-radius: 0.5rem;
             border: 1px solid #e5e7eb;
             margin-top: 1rem;
@@ -137,12 +142,16 @@
             .seal-space {
                 border-color: #000 !important;
             }
+
             .seal-space span {
-                color: #ccc !important; /* Lighter placeholder text on print */
+                color: #ccc !important;
+                /* Lighter placeholder text on print */
             }
+
             #preview-fridge-image {
                 border-color: #000 !important;
-                max-height: 160px; /* <-- يمكنك تعديل هذا الرقم للتحكم في حجم الصورة عند الطباعة */
+                max-height: 160px;
+                /* <-- يمكنك تعديل هذا الرقم للتحكم في حجم الصورة عند الطباعة */
             }
         }
     </style>
@@ -229,32 +238,59 @@
                                 <div class="p-4 border rounded-lg">
                                     <h4 class="text-lg font-semibold mb-4 text-blue-700">مواصفات الثلاجة</h4>
                                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                        <div><label for="fridge-brand" class="block mb-1 font-medium">الماركة:</label><input type="text" id="fridge-brand" class="w-full p-2 border rounded-md" placeholder="مثال: دانسات"></div>
-                                        <div><label for="fridge-model" class="block mb-1 font-medium">الموديل:</label><input type="text" id="fridge-model" class="w-full p-2 border rounded-md" placeholder="مثال: DGF-250"></div>
-                                        <div><label for="fridge-doors" class="block mb-1 font-medium">عدد الأبواب:</label><input type="text" id="fridge-doors" class="w-full p-2 border rounded-md" placeholder="مثال: باب واحد"></div>
-                                        <div><label for="fridge-shelves" class="block mb-1 font-medium">عدد الرفوف:</label><input type="text" id="fridge-shelves" class="w-full p-2 border rounded-md" placeholder="مثال: 4 رفوف"></div>
-                                        <div><label for="fridge-height" class="block mb-1 font-medium">الارتفاع:</label><input type="text" id="fridge-height" class="w-full p-2 border rounded-md" placeholder="مثال: 180 سم"></div>
-                                        <div><label for="fridge-width" class="block mb-1 font-medium">العرض:</label><input type="text" id="fridge-width" class="w-full p-2 border rounded-md" placeholder="مثال: 70 سم"></div>
-                                        <div><label for="fridge-color" class="block mb-1 font-medium">اللون:</label><input type="text" id="fridge-color" class="w-full p-2 border rounded-md" placeholder="مثال: أبيض"></div>
+                                        <div><label for="fridge-brand"
+                                                class="block mb-1 font-medium">الماركة:</label><input type="text"
+                                                id="fridge-brand" class="w-full p-2 border rounded-md"
+                                                placeholder="دانسات"></div>
+                                        <div><label for="fridge-model"
+                                                class="block mb-1 font-medium">الموديل:</label><input type="text"
+                                                id="fridge-model" class="w-full p-2 border rounded-md"
+                                                placeholder="DGF-250"></div>
+                                        <div><label for="fridge-doors" class="block mb-1 font-medium">عدد
+                                                الأبواب:</label><input type="text" id="fridge-doors"
+                                                class="w-full p-2 border rounded-md" placeholder="1"></div>
+                                        <div><label for="fridge-shelves" class="block mb-1 font-medium">عدد
+                                                الرفوف:</label><input type="text" id="fridge-shelves"
+                                                class="w-full p-2 border rounded-md" placeholder="4"></div>
+                                        <div><label for="fridge-height"
+                                                class="block mb-1 font-medium">الارتفاع:</label><input type="text"
+                                                id="fridge-height" class="w-full p-2 border rounded-md"
+                                                placeholder="180 سم"></div>
+                                        <div><label for="fridge-width"
+                                                class="block mb-1 font-medium">العرض:</label><input type="text"
+                                                id="fridge-width" class="w-full p-2 border rounded-md"
+                                                placeholder="70 سم"></div>
+                                        <div><label for="fridge-color"
+                                                class="block mb-1 font-medium">اللون:</label><input type="text"
+                                                id="fridge-color" class="w-full p-2 border rounded-md"
+                                                placeholder="أبيض"></div>
                                         <div>
-                                            <label for="fridge-condition" class="block mb-1 font-medium">حالة الثلاجة:</label>
-                                            <select id="fridge-condition" class="w-full p-2 border rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                            <label for="fridge-condition" class="block mb-1 font-medium">حالة
+                                                الثلاجة:</label>
+                                            <select id="fridge-condition"
+                                                class="w-full p-2 border rounded-md bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                                 <option value="جديدة">جديدة</option>
                                                 <option value="مستعملة">مستعملة</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="mt-4">
-                                        <label for="fridge-general-desc" class="block mb-1 font-medium">وصف عام (اختياري):</label>
-                                        <textarea id="fridge-general-desc" rows="3" class="w-full p-2 border rounded-md" placeholder="أي تفاصيل إضافية مثل الرقم التسلسلي أو حالة الثلاجة..."></textarea>
+                                        <label for="fridge-general-desc" class="block mb-1 font-medium">وصف عام
+                                            (اختياري):</label>
+                                        <textarea id="fridge-general-desc" rows="3" class="w-full p-2 border rounded-md"
+                                            placeholder="أي تفاصيل إضافية مثل الرقم التسلسلي أو حالة الثلاجة..."></textarea>
                                     </div>
                                 </div>
                                 <div class="p-4 border rounded-lg">
                                     <h4 class="text-lg font-semibold mb-2 text-blue-700">صورة الثلاجة</h4>
-                                    <label for="fridge-image-input" class="block mb-2 font-medium">اختر صورة للثلاجة ليتم إدراجها في العقد:</label>
-                                    <input type="file" id="fridge-image-input" accept="image/*" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                                    <label for="fridge-image-input" class="block mb-2 font-medium">اختر صورة للثلاجة
+                                        ليتم إدراجها في العقد:</label>
+                                    <input type="file" id="fridge-image-input" accept="image/*"
+                                        class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
                                     <div id="fridge-image-preview-container">
-                                        <button id="remove-fridge-image-btn" class="mt-2 px-3 py-1 bg-red-100 text-red-700 text-sm font-semibold rounded-full hover:bg-red-200" style="display: none;">
+                                        <button id="remove-fridge-image-btn"
+                                            class="mt-2 px-3 py-1 bg-red-100 text-red-700 text-sm font-semibold rounded-full hover:bg-red-200"
+                                            style="display: none;">
                                             إزالة الصورة
                                         </button>
                                         <img id="fridge-image-preview" src="#" alt="معاينة الصورة" />
@@ -263,7 +299,8 @@
                                 <div class="p-4 border rounded-lg">
                                     <h4 class="text-lg font-semibold mb-2 text-blue-700">مكان التسليم</h4>
                                     <div>
-                                        <label for="delivery-location" class="block mb-1 font-medium">عنوان تسليم الثلاجة:</label>
+                                        <label for="delivery-location" class="block mb-1 font-medium">عنوان تسليم
+                                            الثلاجة:</label>
                                         <input type="text" id="delivery-location"
                                             class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                             placeholder="اكتب عنوان المحل أو المستودع الذي ستوضع فيه الثلاجة">
@@ -277,21 +314,21 @@
                                                 العقد:</label>
                                             <input type="text" id="contract-duration"
                                                 class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                                placeholder="مثال: سنة واحدة">
+                                                placeholder="سنة واحدة">
                                         </div>
                                         <div>
                                             <label for="notice-period" class="block mb-1 font-medium">مدة الإخطار بعدم
                                                 التجديد:</label>
                                             <input type="text" id="notice-period"
                                                 class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                                placeholder="مثال: شهر واحد">
+                                                placeholder="شهر واحد">
                                         </div>
                                         <div>
                                             <label for="termination-notice" class="block mb-1 font-medium">مدة الإخطار
                                                 بالفسخ:</label>
                                             <input type="text" id="termination-notice"
                                                 class="w-full p-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                                placeholder="مثال: أسبوعين">
+                                                placeholder="أسبوعين">
                                         </div>
                                         <div>
                                             <label for="dispute-location" class="block mb-1 font-medium">المحاكم المختصة
@@ -324,21 +361,31 @@
                                 </p>
                                 <p class="mb-4">
                                     <strong>الطرف الثاني:</strong> <span id="preview-party2-name"
-                                        data-placeholder="[اسم المستلم]"></span>، ورقم السجل: <span id="preview-party2-cr"
-                                        data-placeholder="[رقم السجل]"></span>. (يشار إليه فيما بعد بـ "الطرف الثاني")
+                                        data-placeholder="[اسم المستلم]"></span>، ورقم السجل: <span
+                                        id="preview-party2-cr" data-placeholder="[رقم السجل]"></span>. (يشار إليه فيما
+                                    بعد بـ "الطرف الثاني")
                                 </p>
                                 <h5 class="font-bold mt-4">مقدمة:</h5>
                                 <p>حيث أن الطرف الأول يمتلك ثلاجة عرض بالمواصفات التالية:
-                                    <strong>ماركة:</strong> <span id="preview-fridge-brand" data-placeholder="[الماركة]"></span>,
-                                    <strong>موديل:</strong> <span id="preview-fridge-model" data-placeholder="[الموديل]"></span>,
-                                    <strong>عدد الأبواب:</strong> <span id="preview-fridge-doors" data-placeholder="[عدد الأبواب]"></span>,
-                                    <strong>عدد الرفوف:</strong> <span id="preview-fridge-shelves" data-placeholder="[عدد الرفوف]"></span>,
-                                    <strong>اللون:</strong> <span id="preview-fridge-color" data-placeholder="[اللون]"></span>,
-                                    <strong>الأبعاد:</strong> ارتفاع <span id="preview-fridge-height" data-placeholder="[الارتفاع]"></span> وعرض <span id="preview-fridge-width" data-placeholder="[العرض]"></span>.
-                                    <span id="preview-fridge-general-desc-container" style="display: none;"><strong>وصف إضافي:</strong> <span id="preview-fridge-general-desc"></span>.</span>
+                                    <strong>ماركة:</strong> <span id="preview-fridge-brand"
+                                        data-placeholder="[الماركة]"></span>,
+                                    <strong>موديل:</strong> <span id="preview-fridge-model"
+                                        data-placeholder="[الموديل]"></span>,
+                                    <strong>عدد الأبواب:</strong> <span id="preview-fridge-doors"
+                                        data-placeholder="[عدد الأبواب]"></span>,
+                                    <strong>عدد الرفوف:</strong> <span id="preview-fridge-shelves"
+                                        data-placeholder="[عدد الرفوف]"></span>,
+                                    <strong>اللون:</strong> <span id="preview-fridge-color"
+                                        data-placeholder="[اللون]"></span>,
+                                    <strong>الأبعاد:</strong> ارتفاع <span id="preview-fridge-height"
+                                        data-placeholder="[الارتفاع]"></span> سم وعرض <span id="preview-fridge-width"
+                                        data-placeholder="[العرض]"></span><span> سم</span>.
+                                    <span id="preview-fridge-general-desc-container" style="display: none;"><strong>وصف
+                                            إضافي:</strong> <span id="preview-fridge-general-desc"></span>.</span>
                                     وحيث أن الطرف الثاني يرغب في استلام
                                     هذه الثلاجة لاستخدامها في نشاطه التجاري، فقد اتفق الطرفان وهما بكامل
-                                    أهليتهما المعتبرة شرعاً وقانوناً على ما يلي:</p>
+                                    أهليتهما المعتبرة شرعاً وقانوناً على ما يلي:
+                                </p>
 
                                 <h5 class="font-bold mt-4">البند الأول: موضوع العقد</h5>
                                 <p>يعتبر التمهيد والمقدمة أعلاه جزءاً لا يتجزأ من هذا العقد. بموجب هذا العقد، يتعهد
@@ -347,7 +394,8 @@
                                     هذا العقد.</p>
 
                                 <h5 class="font-bold mt-4">البند الثاني: وصف وحالة الثلاجة</h5>
-                                <p>يُقر الطرف الثاني بأنه عاين الثلاجة المعاينة التامة النافية للجهالة، ويقر بأنها تُسلم وهي
+                                <p>يُقر الطرف الثاني بأنه عاين الثلاجة المعاينة التامة النافية للجهالة، ويقر بأنها تُسلم
+                                    وهي
                                     بحالة <span id="preview-fridge-condition" data-placeholder="[الحالة]"></span> وصالحة
                                     للاستعمال وتفي بالغرض الذي استلمها من أجله.</p>
                                 <div id="image-container-preview" class="mt-4">
@@ -602,7 +650,7 @@
 
             updateDeliveryClause();
 
-            fridgeImageInput.addEventListener('change', function(event) {
+            fridgeImageInput.addEventListener('change', function (event) {
                 const file = event.target.files[0];
                 if (file) {
                     const fridgeImagePreview = document.getElementById('fridge-image-preview');
@@ -611,7 +659,7 @@
                     const imageContainerPreview = document.getElementById('image-container-preview');
 
                     const reader = new FileReader();
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         fridgeImagePreview.src = e.target.result;
                         fridgeImagePreviewContainer.style.display = 'block';
                         removeFridgeImageBtn.style.display = 'inline-block';
